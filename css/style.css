@@ -39,6 +39,10 @@
   23. divider
 */
 
+:root{
+	/* #ff264a */
+	--main-color: #ff264a;
+}
 
 /* 1. TEMPLATE BACKGROUNDS */
 /* 1.1. fullscreen slider VIDEO BACKGROUND */
@@ -147,7 +151,7 @@ line-height: 1.5;
 }
 
 a {
-color: #ff264a;
+color: var(--main-color);
 text-decoration: none;
 outline: none;
  -webkit-font-smoothing: antialiased;
@@ -170,7 +174,7 @@ a:hover,
 a:visited,
 a:active,
 a:focus {
-color: #ff264a;
+color: var(--main-color);
 text-decoration: none;
 outline: none;
 font-weight: 600;
@@ -207,7 +211,7 @@ line-height: 2;
 
 p a,
 p a:hover {
-color: #ff264a;
+color: var(--main-color);
 text-decoration: none;
 outline: none;
 font-weight: 600;
@@ -225,12 +229,12 @@ font-weight: bold;
 }
 
 ::-moz-selection {
-background: #ff264a;
+background: var(--main-color);
 color: #e5e5e5;
 }
 
 ::selection {
-background: #ff264a;
+background: var(--main-color);
 color: #e5e5e5;
 }
 
@@ -606,7 +610,7 @@ z-index: -1;
     left: 50%;
     padding: 25px;
     margin: 0 auto;
-    background: #ff264a;
+    background: var(--main-color);
     -webkit-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
@@ -1523,33 +1527,33 @@ text-shadow: none;
 }
 
 h3.section-header span {
-color: #ff264a;
--webkit-text-stroke: 1px #ff264a;
-        text-stroke: 1px #ff264a;
+color: var(--main-color);
+-webkit-text-stroke: 1px var(--main-color);
+        text-stroke: 1px var(--main-color);
 }
 
-@supports((text-stroke: 1px #ff264a) or (-webkit-text-stroke: 1px #ff264a)) {
+@supports((text-stroke: 1px var(--main-color)) or (-webkit-text-stroke: 1px var(--main-color))) {
   h3.section-header span {
     color: transparent;
-    -webkit-text-stroke: 1px #ff264a;
-            text-stroke: 1px #ff264a;
+    -webkit-text-stroke: 1px var(--main-color);
+            text-stroke: 1px var(--main-color);
     text-shadow: none;
   }
 }
 
 h3.section-header span.section-header-full-color {
-color: #ff264a;
--webkit-text-stroke: 1px #ff264a;
-        text-stroke: 1px #ff264a;
+color: var(--main-color);
+-webkit-text-stroke: 1px var(--main-color);
+        text-stroke: 1px var(--main-color);
 }
 
 a.link-underline-contact,
 a.link-underline-contact:hover {
-color: #ff264a;
+color: var(--main-color);
 font-size: 50px;
 font-weight: 700;
--webkit-text-stroke: 1px #ff264a;
-        text-stroke: 1px #ff264a;
+-webkit-text-stroke: 1px var(--main-color);
+        text-stroke: 1px var(--main-color);
 		text-shadow: none;
  -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
@@ -1560,11 +1564,11 @@ font-weight: 700;
         backface-visibility: hidden;
 }
 
-@supports((text-stroke: 1px #ff264a) or (-webkit-text-stroke: 1px #ff264a)) {
+@supports((text-stroke: 1px var(--main-color)) or (-webkit-text-stroke: 1px var(--main-color))) {
   a.link-underline-contact {
     color: transparent;
-    -webkit-text-stroke: 1px #ff264a;
-            text-stroke: 1px #ff264a;
+    -webkit-text-stroke: 1px var(--main-color);
+            text-stroke: 1px var(--main-color);
     text-shadow: none;
   }
 }
@@ -1642,17 +1646,17 @@ line-height: 100%;
   }
 }
 
-@supports((text-stroke: 1px #ff264a) or (-webkit-text-stroke: 1px #ff264a)) {
+@supports((text-stroke: 1px var(--main-color)) or (-webkit-text-stroke: 1px var(--main-color))) {
   .hero-heading span {
     /* color: transparent;
-    -webkit-text-stroke: 1px #ff264a;
-            text-stroke: 1px #ff264a;
+    -webkit-text-stroke: 1px var(--main-color);
+            text-stroke: 1px var(--main-color);
     text-shadow: none; */
   }
 }
 
 .hero-heading span {
-color: #ff264a;
+color: var(--main-color);
 }
 
 .hero-subheading {
@@ -1663,7 +1667,7 @@ font-weight: 700;
 text-transform: uppercase;
 letter-spacing: 0.05em;
 line-height: normal;
-color: #ff264a;
+color: var(--main-color);
  -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 -webkit-text-size-adjust: 100%;
@@ -1695,7 +1699,7 @@ color: #b7b7b7;
 }
 
 .comment span {
-color: #ff264a;
+color: var(--main-color);
 }
 
 /* 17. headers */
@@ -1746,7 +1750,7 @@ margin: -4px 0 19px 0;
 }
 
 .awesome {
-color: #ff264a;
+color: var(--main-color);
  -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 -webkit-text-size-adjust: 100%;
@@ -2148,7 +2152,7 @@ bottom: 0;
 left: 0;
 width: 100%;
 height: 1px;
-background: #ff264a;
+background: var(--main-color);
 -webkit-transform-origin: right center;
    -moz-transform-origin: right center;
     -ms-transform-origin: right center;
@@ -2553,7 +2557,7 @@ margin: -4px 0 0 -1px;
     -ms-transform: scale(1.8);
      -o-transform: scale(1.8);
         transform: scale(1.8);
-background: #ff264a;
+background: var(--main-color);
 }
 
 .slider-progress-bar {
