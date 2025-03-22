@@ -18,7 +18,6 @@
   9. contact form
 */
 
-
 $(function() {
     "use strict";
 	
