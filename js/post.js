@@ -3,20 +3,15 @@ let totalRenders = 0;
 
 const checkCompletion = () => {
   processed++;
-  if (processed === totalRenders) {
-    //console.log('All renders inserted, proceeding with other scripts...');
+  if (processed >= totalRenders && totalRenders > 0) { // Ensure totalRenders is valid
     initOtherScripts();
   }
 };
 
 const initOtherScripts = () => {
-  //console.log('Loading other scripts...');
   loadScript('js/plugins.js')
-    .then(() => {
-      return loadScript('js/main.js');
-    })
+    .then(() => loadScript('js/main.js'));
 };
-
 
 const loadScript = (src) => {
   return new Promise((resolve) => {
@@ -27,11 +22,18 @@ const loadScript = (src) => {
   });
 };
 
+// Fetch renders.json and set totalRenders first
 fetch('renders.json')
   .then(response => response.json())
   .then(data => {
     const swiperWrapper = document.querySelector('.swiper-wrapper');
-    totalRenders = data.renders.length;
+    
+    if (!data.renders || data.renders.length === 0) {
+      console.error('No renders found');
+      return;
+    }
+
+    totalRenders = data.renders.length; // Set before inserting elements
     
     data.renders.forEach((render, index) => {
       const slide = document.createElement('div');
@@ -63,7 +65,9 @@ fetch('renders.json')
         </div>
       `;
       swiperWrapper.appendChild(slide);
-      if (render.type !== 'video') checkCompletion(); // Images trigger completion on load
+      if (render.type !== 'video') checkCompletion();
     });
   })
-  .catch(error => console.error('Error loading renders:', error));
+  .catch(error => {
+    console.error('Error loading renders:', error);
+  });
