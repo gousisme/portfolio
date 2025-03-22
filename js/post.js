@@ -1,14 +1,18 @@
 let processed = 0;
 let totalRenders = 0;
+let timeout; // To prevent infinite wait
 
 const checkCompletion = () => {
   processed++;
-  if (processed >= totalRenders && totalRenders > 0) { // Ensure totalRenders is valid
+  console.log(`Processed: ${processed}/${totalRenders}`);
+  if (processed >= totalRenders && totalRenders > 0) {
+    clearTimeout(timeout);
     initOtherScripts();
   }
 };
 
 const initOtherScripts = () => {
+  console.log("Initializing other scripts...");
   loadScript('js/plugins.js')
     .then(() => loadScript('js/main.js'));
 };
@@ -27,14 +31,16 @@ fetch('renders.json')
   .then(response => response.json())
   .then(data => {
     const swiperWrapper = document.querySelector('.swiper-wrapper');
-    
-    if (!data.renders || data.renders.length === 0) {
+
+    if (!swiperWrapper || !data.renders || data.renders.length === 0) {
       console.error('No renders found');
+      checkCompletion(); // Prevent infinite wait
       return;
     }
 
-    totalRenders = data.renders.length; // Set before inserting elements
-    
+    totalRenders = data.renders.length;
+    console.log(`Total renders: ${totalRenders}`);
+
     data.renders.forEach((render, index) => {
       const slide = document.createElement('div');
       slide.classList.add('swiper-slide');
@@ -42,11 +48,11 @@ fetch('renders.json')
         <div class="swiper-slide-inner" data-swiper-parallax="50%">
           <div class="swiper-slide-inner-bg">
             ${render.type === 'video' ? `
-              <video playsinline autoplay muted loop onloadeddata="checkCompletion()">
+              <video playsinline autoplay muted loop onloadeddata="checkCompletion()" onerror="checkCompletion()">
                 <source src="${render.link}" type="video/mp4">
               </video>
             ` : `
-              <img src="${render.link}" alt="${render.title}" onload="checkCompletion()">
+              <img src="${render.link}" alt="${render.title}" onload="checkCompletion()" onerror="checkCompletion()">
             `}
           </div>
           <div class="overlay overlay-dark-${render.dim}"></div>
@@ -67,7 +73,14 @@ fetch('renders.json')
       swiperWrapper.appendChild(slide);
       if (render.type !== 'video') checkCompletion();
     });
+
+    // Set a timeout to avoid infinite wait
+    timeout = setTimeout(() => {
+      console.warn("Timeout reached, initializing scripts...");
+      initOtherScripts();
+    }, 5000);
   })
   .catch(error => {
     console.error('Error loading renders:', error);
+    checkCompletion(); // Prevent infinite loop
   });
