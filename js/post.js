@@ -49,7 +49,7 @@ fetch('renders.json')
               <img src="${render.link}" alt="${render.title}" onload="checkCompletion()">
             `}
           </div>
-          <div class="overlay overlay-dark-60"></div>
+          <div class="overlay overlay-dark-${render.dim}"></div>
           <div class="swiper-slide-inner-txt">
             <a href="${render.artstation}" target="_blank">
               <h2 class="hero-subheading fadeIn-element introduction">

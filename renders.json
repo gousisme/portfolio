@@ -1,16 +1,26 @@
 {
   "renders": [
     {
+      "title": "Forgotten Sentinel.",
+      "comment": "<span>Chasm's Call</span> Challenge Top 100",
+      "type": "video",
+      "dim": "60",
+      "link": "https://cdn.artstation.com/p/video_sources/002/510/738/chasmscall-gousisme.mp4",
+      "artstation": "https://www.artstation.com/artwork/2B5rPv"
+    },
+    {
       "title": "Gundam.",
       "comment": "\"Really well done here, great lighting, super cool\" <span>- pwnisher</span>",
       "type": "video",
+	  "dim": "60",
       "link": "https://cdn.artstation.com/p/video_sources/002/015/217/gousisme.mp4",
       "artstation": "https://www.artstation.com/artwork/6NWDdx"
     },
     {
-      "title": "<span>Crimson</span> Dawn",
+      "title": "<span>Crimson</span> Dawn.",
       "comment": "<span>Kinetic Rush</span> challenge entry",
       "type": "video",
+	  "dim": "50",
       "link": "https://cdn.artstation.com/p/video_sources/002/165/446/gousisme.mp4",
       "artstation": "https://www.artstation.com/artwork/QKnoDx"
     },
@@ -18,6 +28,7 @@
       "title": "Monolith.",
       "comment": "\"This is so sick! Love that purple, and the lighting... This is beautiful, freaking love this!\" <span>- pwnisher</span>",
       "type": "image",
+	  "dim": "60",
       "link": "https://cdna.artstation.com/p/assets/images/images/080/362/262/large/gous-monolith-woclouds.jpg?1727360810",
       "artstation": "https://www.artstation.com/artwork/kNQWvn"
     },
@@ -25,6 +36,7 @@
       "title": "Immortal.",
       "comment": "<span>Weekly </span>Challenge Entry",
       "type": "image",
+	  "dim": "60",
       "link": "https://cdna.artstation.com/p/assets/images/images/083/251/518/large/gous-foggy-main-2-wtext-as.jpg",
       "artstation": "https://www.artstation.com/artwork/XJDw23"
     },
@@ -32,6 +44,7 @@
       "title": "Snorlax Island.",
       "comment": "\"really really fun, great lighting, nice natural vignette with these clouds to draw the eye to the island, I love it\" <span>- pwnisher</span>",
       "type": "image",
+	  "dim": "60",
       "link": "https://cdna.artstation.com/p/assets/images/images/078/050/276/large/gous-snorlaxisland-final.jpg?1721065672",
       "artstation": "https://www.artstation.com/artwork/XgqYEw"
     },
@@ -39,6 +52,7 @@
       "title": "Apartment In The Cloud.",
       "comment": "",
       "type": "image",
+	  "dim": "60",
       "link": "https://cdna.artstation.com/p/assets/images/images/077/872/066/large/gous-render-p.jpg?1720578196",
       "artstation": "https://www.artstation.com/artwork/Nyl9Zb"
     }
